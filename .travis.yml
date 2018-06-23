@@ -39,11 +39,11 @@ deploy:
   provider: releases
   api_key:
     secure: p5oW5PgnkJmOATszLfNe77M9WAXj6vCWjnuh/YhDu9ce8rIVcxuts91jvFEXhXswRJpri52vds3CHTG+W4RaPfetCF4P4mIiyYp0GSkVhhIOqMVLqTiwZZ/5jAx4qVwyMwqPMWOyT2QmyVUD0tnKkMcuV9WZDhNvR5YE5WDeFAn4FuT/CWzljmhR1bwhiEGXQT0t7z2aV8NA/xvt2huvk79+x0E80mdHQlXaVxRfB5BYkHg+l7QmBAva4lgdIq5yeaJlfuqVppMaWvLbJZnA4DkPveiznA4M+2a4B0pXAyN9PRqI6ZLHopmNBGrLblva5XK5mQl5xuJ2LHYJZppzZ2ItRmCZCAhSMLB0YyqfBI80bUfBER1wWl+C21dqjhlt7jg/ykFL8yll7IPJZc+YVQUMbgz4ua87nu+WBzXfzceSw9wkCmM/193lB5TUODjUo9EZfE+u7+AzYKKSAKOvGjsK+/biH4AIpxbC1lHOy86P8QfEDgJY8YVCgWHcXZUogKKqL1pu6JDGcvJv/RU9ocqVIZBj6/CcjtZP12xJ8hKiWlWr1oPMCRzuNUjfWWk65HoC2BbiwQffM1j4YLa8BfZc3EVaXnY/tMbrPuotsGmrPBENS8wzEDJk3UdOMkl+iTAInJPrayWoV6yqQdnD3+j+gsFlmnDEBoGbR0wXmtw=
-  file: app/build/outputs/apk/app-relase.apk
+  file: app/build/outputs/apk/release/app-release.apk
   on:
     repo: bjchenxz/TravisDemo
     tags: true
     all_branches: true
 
 after_deploy:
-- fir p app/build/outputs/apk/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
+- fir p app/build/outputs/apk/release/app-release.apk -T $FIR_TOKEN -c "`git cat-file tag $TRAVIS_TAG`"
