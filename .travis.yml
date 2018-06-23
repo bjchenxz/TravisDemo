@@ -27,6 +27,7 @@ script:
 
 before_install:
 - gem install fir-cli
+- yes | sdkmanager --update
 - yes | sdkmanager --licenses
 - yes | sdkmanager "platforms;android-27"
 - rm -f gradle.properties
