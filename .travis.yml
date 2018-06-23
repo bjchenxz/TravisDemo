@@ -1,0 +1,21 @@
+language: android
+jdk: oraclejdk8
+sudo: false
+android:
+  components:
+  - tools
+  - platform-tools
+  - build-tools-27.0.2
+  - android-27
+  - extra-android-m2repository
+  - extra-google-m2repository
+  - extra-android-support
+  - extra-google-google_play_services
+script:
+- "./gradlew assembleRelease"
+
+before_install:
+- gem install fir-cli
+- openssl aes-256-cbc -K $encrypted_639db8c6f794_key -iv $encrypted_639db8c6f794_iv
+  -in cxz.jks.enc -out cxz.jks -d
+
