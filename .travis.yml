@@ -33,7 +33,7 @@ script:
 before_install:
 - gem install fir-cli
 - yes | sdkmanager --update
-- yes | sdkmanager --licenses
+- yes | sudo sdkmanager --licenses
 - yes | sdkmanager "platforms;android-30"
 - rm -f gradle.properties
 - chmod +x gradlew
